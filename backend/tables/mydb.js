@@ -4,7 +4,7 @@ console.log(mysql)
 var con = mysql.createConnection({
   port: 3306,
   host:"localhost",
-  user: "coder",
+  user: "root",
   password: "examly",
   database:"tarriff"
 });

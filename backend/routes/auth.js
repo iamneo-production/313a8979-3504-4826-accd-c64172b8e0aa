@@ -10,6 +10,6 @@ router.post('/login',loginValidation,(req,res,next)=>{
 })
 router.post('/signup',(req,res)=>{
     const { email , username , phonenumber , password} = req.body;
-
+    
 })
 
