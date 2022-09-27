@@ -3,49 +3,76 @@ import Card from 'react-bootstrap/Card';
 
 function Home() {
   return (
-    <div class="container">
-  <div class="row">
-    <div class="col-sm">
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+<>
+    <center>
+    <div className="mt-4 d-flex justify-content-center">
+      <h2 class="text-light " style = {{textShadow: '2px 2px 6px grey'}}>DASHBOARD</h2>
+    </div>
+
+    <div className="container mt-4 " id = "tarrifHomeBody" >
+  <div className="row justify-content-start">
+    <div className="col-4" id="grid1">
+    <Card style={{ width: '18rem',borderRadius:"50px",boxShadow: '10px 10px 10px #A9Bfff' }} className ="p-3 rounded-lg">
+     
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <div className="d-flex justify-content-center " >
+          <h4 className="shadow-inner" style = {{textShadow: '2px 2px 3px grey'}}>Total Expense</h4>
+        </div>
+        <div className="d-flex justify-content-center mt-5 mb-5">
+          <h4 >3600</h4>
+        </div>
       </Card.Body>
     </Card>
     </div>
-    <div class="col-sm">
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+    <div className="col-4" id="grid2">
+    <Card style={{ width: '18rem' ,borderRadius:"50px",boxShadow: '10px 10px 10px #A9Bfff' }} className ="lg p-3 rounded-lg">
+     
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <div className="d-flex justify-content-center ">
+          <h4 className="shadow-inner" style = {{textShadow: '2px 2px 3px grey'}}>Pending Expense</h4>
+        </div>
+        <div className="d-flex justify-content-center mt-5 mb-5">
+          <h4 >3600</h4>
+        </div>
       </Card.Body>
     </Card>
     </div>
-    <div class="col-sm">
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+    <div className="col-4" id="grid3">
+    <Card style={{ width: '18rem' ,borderRadius:"50px",boxShadow: '10px 10px 10px #A9Bfff' }} className =" p-3 rounded-lg">
+     
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <div className="d-flex justify-content-center ">
+          <h4 className="shadow-inner" style = {{textShadow: '2px 2px 3px grey'}}>Approved Expense</h4>
+        </div>
+        <div className="d-flex justify-content-center mt-5 mb-5">
+          <h4 >3600</h4>
+        </div>
       </Card.Body>
     </Card>
     </div>
   </div>
+  
+  
+  <div className="row justify-content-around mt-5" >
+    <div className="col-4" id="grid4">
+    <Card style={{ width: '18rem' ,borderRadius:"50px",boxShadow: '10px 10px 10px #A9Bfff' }} className ="p-3 rounded-lg">
+     
+      <Card.Body  >
+        <div className="d-flex justify-content-center ">
+          <h4 className="shadow-inner" style = {{textShadow: '2px 2px 3px grey'}}>Total Employee</h4>
+        </div>
+        <div className="d-flex justify-content-center mt-5 mb-5">
+          <h4 >3600</h4>
+        </div>
+      </Card.Body>
+    </Card>
+    </div>
+    
+  </div>
+  
 </div>
+</center>
+</>
   );
 }
 
