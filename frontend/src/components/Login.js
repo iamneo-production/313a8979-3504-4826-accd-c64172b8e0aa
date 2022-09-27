@@ -1,7 +1,12 @@
 import React, { useState,useEffect} from 'react'
-
+import axios from 'axios';
 export default function Login(){
-    
+    const [email,setEmail] = useState();
+    const [password,setPassword] = useState();
+    const login =async (event) =>{
+      event.preventDefault()
+      await axios.post("https://8080-aacdfdcbdbfbcffabfbadbfceaedbfcbceaface.examlyiopb.examly.io/signup",{email,password}).then((req)=>{alert("connected")}).catch((err)=>{console.log(err)})
+    }
     return (
       <form id = "loginBox">
         <h3>Login</h3>
@@ -12,6 +17,7 @@ export default function Login(){
             type="email"
             className="form-control"
             placeholder="Enter email"
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
@@ -21,6 +27,7 @@ export default function Login(){
             type="password"
             className="form-control"
             placeholder="Enter password"
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
@@ -38,7 +45,7 @@ export default function Login(){
         </div>
 
         <div className="d-grid">
-          <button type="submit" className="btn btn-primary" id= "loginButton">
+          <button type="submit" className="btn btn-primary" id= "loginButton" onClick={login}>
             Login
           </button>
         </div>
