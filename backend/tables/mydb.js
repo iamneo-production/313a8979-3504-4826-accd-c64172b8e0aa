@@ -27,6 +27,14 @@ con.connect(function(err) {
         console.log("table created");
       });
   });
+  con.connect(function(err) {
+    if (err) throw err;
+    var sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'";
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log(result.affectedRows + " record(s) updated");
+    });
+  });
 
 
 // create table expenseModel(expenseId varchar(256),billNumber int,billImage varbinary(max),billCost int,datedOn date,status varchar(256),remark varchar(256),claimedBy varchar(256),Primary key (expenseId),foreign key(claimedBy) references userModel(email))
