@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 export default function Signup() {
     const [email,setEmail] = useState();
@@ -9,8 +7,7 @@ export default function Signup() {
     const [mobileNumber,setMobilenumber] = useState();
     const [userName,setUsername] = useState();
     const [value, setValue] = useState('Employee');
-    const notify = () => toast("User Signed in Successfully");
-    cosnt forerr = () => toast("Error Occured check credentials");
+
     const signUp = async(event) =>{
       event.preventDefault();
       await axios.post("https://8080-aacdfdcbdbfbcffabfbadbfceaedbfcbceaface.examlyiopb.examly.io/signup", { email:email,
