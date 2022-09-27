@@ -14,5 +14,17 @@ db.connect((err) => {
    else
       console.log(`started`)
 })
-
+// db.connect(function(err) {
+//    console.log("Connected!");
+//    var sql = "INSERT INTO de(id) VALUES (3)";
+//    db.query(sql, function (errr, result) {
+//      if (errr){
+//         console.log('error');
+//      } 
+//      else{
+//       console.log("1 record inserted");
+//      }
+     
+//    });
+//  });
 module.exports = db
