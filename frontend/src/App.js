@@ -7,12 +7,14 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Home from './components/Home'
 import NavInside from './components/NavInside'
+import User from './components/User'
 
 function App() {
   return (
     <>
     <NavInside/>
-    <Home/>
+    <User/>
+    {/* <Home/> */}
     </>
     // <Router>
     //   <div className="App">
