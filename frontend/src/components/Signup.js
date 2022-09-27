@@ -1,56 +1,52 @@
-import React from 'react'
-// import './Login.css'
+import React, { Component } from 'react'
 
+export default class Signup extends Component {
+  render() {
+    return (
+      <form>
+        <h3>Sign Up</h3>
 
- 
-   
+        <div className="mb-3">
+          <label>First name</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="First name"
+          />
+        </div>
 
-function Signup() {
-  return (
-    <>
-      
-          <div>
-            
-            <p>Sign In</p>
-            <input
-              type="email"
-              placeholder="Email"
-             
-              onChange={this.onTextboxChangeSignInEmail}
-            />
-            <br />
-            <input
-              type="password"
-              placeholder="Password"
-             
-              onChange={this.onTextboxChangeSignInPassword}
-            />
-            <br />
-            <button onClick={this.onSignIn}>Sign In</button>
-          </div>
-          <br />
-          <br />
-          <div>
-            
-            <p>Sign Up</p>
-            <input
-              type="email"
-              placeholder="Email"
-              
-              onChange={this.onTextboxChangeSignUpEmail}
-            /><br />
-            <input
-              type="password"
-              placeholder="Password"
-             
-              onChange={this.onTextboxChangeSignUpPassword}
-            /><br />
-            <button onClick={this.onSignUp}>Sign Up</button>
-          </div>
+        <div className="mb-3">
+          <label>Last name</label>
+          <input type="text" className="form-control" placeholder="Last name" />
+        </div>
 
-      
-    </>
-  );
+        <div className="mb-3">
+          <label>Email address</label>
+          <input
+            type="email"
+            className="form-control"
+            placeholder="Enter email"
+          />
+        </div>
+
+        <div className="mb-3">
+          <label>Password</label>
+          <input
+            type="password"
+            className="form-control"
+            placeholder="Enter password"
+          />
+        </div>
+
+        <div className="d-grid">
+          <button type="submit" className="btn btn-primary">
+            Sign Up
+          </button>
+        </div>
+        <p className="forgot-password text-right">
+          Already registered <a href="/sign-in">sign in?</a>
+        </p>
+      </form>
+    )
+  }
 }
-
-export default Signup;
