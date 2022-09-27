@@ -1,11 +1,11 @@
 import React from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
-import Login from './components/Login'
-import Signup from './components/Signup'
-import Home from './components/Home'
+// import Login from './components/Login'
+// import Signup from './components/Signup'
+// import Home from './components/Home'
 import NavInside from './components/NavInside'
 import User from './components/User'
 
