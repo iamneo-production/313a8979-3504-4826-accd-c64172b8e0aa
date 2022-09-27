@@ -81,6 +81,11 @@ const Register = () => {
     setMobile(mobile)
   }
   
+  const onChangeRole = (e) =>{
+    const rol = e.target.value;
+    setRole(rol)
+  }
+
   const handleRegister = (e) => {
     e.preventDefault();
 
@@ -145,6 +150,16 @@ const Register = () => {
                   value={password}
                   onChange={onChangePassword}
                   validations={[required, vpassword]}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="role">Role</label>
+                <Input
+                  type="role"
+                  className="form-control"
+                  name="role"
+                  value={role}
+                  onChange={onChangeRole}
                 />
               </div>
               <div className="form-group">
