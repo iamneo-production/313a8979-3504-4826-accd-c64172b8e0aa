@@ -3,9 +3,10 @@ import axios from 'axios';
 export default function Login(){
     const [email,setEmail] = useState();
     const [password,setPassword] = useState();
-    const login =async (event) =>{
+    const logIn =async (event) =>{
       event.preventDefault()
-      await axios.post("https://8080-aacdfdcbdbfbcffabfbadbfceaedbfcbceaface.examlyiopb.examly.io/signup",{email,password}).then((req)=>{alert("connected")}).catch((err)=>{console.log(err)})
+      await axios.post("https://8080-aacdfdcbdbfbcffabfbadbfceaedbfcbceaface.examlyiopb.examly.io/login",
+      {email: email,password: password}).then((req)=>{alert("connected")}).catch((err)=>{console.log(err)})
     }
     return (
       <form id = "loginBox">
@@ -45,7 +46,7 @@ export default function Login(){
         </div>
 
         <div className="d-grid">
-          <button type="submit" className="btn btn-primary" id= "loginButton" onClick={login}>
+          <button type="submit" className="btn btn-primary" id= "loginButton" onClick={logIn}>
             Login
           </button>
         </div>
