@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 export default class Login extends Component {
   render() {
     return (
-      <form>
-        <h3>Sign In</h3>
+      <form id = "loginBox">
+        <h3>Login</h3>
 
-        <div className="mb-3">
+        <div className="mb-3" id = "email">
           <label>Email address</label>
           <input
             type="email"
@@ -15,7 +15,7 @@ export default class Login extends Component {
           />
         </div>
 
-        <div className="mb-3">
+        <div className="mb-3" id = "password">
           <label>Password</label>
           <input
             type="password"
@@ -38,12 +38,12 @@ export default class Login extends Component {
         </div>
 
         <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
-            Submit
+          <button type="submit" className="btn btn-primary" id= "loginButton">
+            Login
           </button>
         </div>
         <p className="forgot-password text-right">
-          Forgot <a href="#">password?</a>
+          New User? <a href="/sign-up">Sign Up</a>
         </p>
       </form>
     )

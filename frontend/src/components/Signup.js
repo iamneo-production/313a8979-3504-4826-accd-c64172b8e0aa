@@ -6,40 +6,40 @@ export default class Signup extends Component {
       <form>
         <h3>Sign Up</h3>
 
-        <div className="mb-3">
-          <label>Enter Email</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="First name"
-          />
-        </div>
-
-        <div className="mb-3">
-          <label>Last name</label>
-          <input type="text" className="form-control" placeholder="Last name" />
-        </div>
-
-        <div className="mb-3">
-          <label>Email address</label>
+        <div className="mb-3" id= "email">
+          <label>Email</label>
           <input
             type="email"
             className="form-control"
-            placeholder="Enter email"
+            placeholder="Enter Email"
           />
         </div>
 
-        <div className="mb-3">
-          <label>Email address</label>
+        <div className="mb-3" id = "username">
+          <label>Username</label>
+          <input type="string" className="form-control" placeholder="Enter Username" />
+        </div>
+
+        <div className="mb-3" id = "mobileNumber">
+          <label>MobileNumber</label>
           <input
-            type="email"
+            type="number"
             className="form-control"
-            placeholder="Enter email"
+            placeholder="Enter MobileNumber"
           />
         </div>
 
-        <div className="mb-3">
+        <div className="mb-3" id = "password">
           <label>Password</label>
+          <input
+            type="password"
+            className="form-control"
+            placeholder="Enter Password"
+          />
+        </div>
+
+        <div className="mb-3" id = "confirmPassword">
+          <label>Confirm Password</label>
           <input
             type="password"
             className="form-control"
@@ -48,12 +48,12 @@ export default class Signup extends Component {
         </div>
 
         <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
-            Sign Up
+          <button type="submit" className="btn btn-primary" id = "submitButton">
+            Submit
           </button>
         </div>
         <p className="forgot-password text-right">
-          Already registered <a href="/sign-in">sign in?</a>
+          Already a user? <a href="/sign-in">Login</a>
         </p>
       </form>
     )

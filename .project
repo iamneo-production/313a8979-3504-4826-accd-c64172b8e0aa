@@ -7,9 +7,12 @@
 	<buildSpec>
 		<buildCommand>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
 =======
 <<<<<<< HEAD
 >>>>>>> b57c06a14024253f8e03977f112c1bbd97fa39ed
+>>>>>>> 42a3c4d6850223d70520837124abb29e72452613
 			<name>org.eclipse.jdt.core.javabuilder</name>
 			<arguments>
 			</arguments>
@@ -17,9 +20,14 @@
 		<buildCommand>
 <<<<<<< HEAD
 =======
+>>>>>>> abae1d62d4e0d9344a891152a678107d76c6e300
+=======
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> 982d07d66da885b24fe2415bd22d6ab090f2b792
 >>>>>>> b57c06a14024253f8e03977f112c1bbd97fa39ed
+>>>>>>> 42a3c4d6850223d70520837124abb29e72452613
 			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
@@ -30,15 +38,25 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 =======
 <<<<<<< HEAD
+>>>>>>> abae1d62d4e0d9344a891152a678107d76c6e300
+=======
+<<<<<<< HEAD
 		<nature>org.eclipse.jdt.core.javanature</nature>
 =======
 >>>>>>> 982d07d66da885b24fe2415bd22d6ab090f2b792
 >>>>>>> b57c06a14024253f8e03977f112c1bbd97fa39ed
+>>>>>>> 42a3c4d6850223d70520837124abb29e72452613
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
 <<<<<<< HEAD
+<<<<<<< HEAD
+			<id>1664257477617</id>
+=======
+			<id>1664257477037</id>
+>>>>>>> abae1d62d4e0d9344a891152a678107d76c6e300
+=======
 			<id>1664257441113</id>
 =======
 <<<<<<< HEAD
@@ -47,6 +65,7 @@
 			<id>1664257477037</id>
 >>>>>>> 982d07d66da885b24fe2415bd22d6ab090f2b792
 >>>>>>> b57c06a14024253f8e03977f112c1bbd97fa39ed
+>>>>>>> 42a3c4d6850223d70520837124abb29e72452613
 			<name></name>
 			<type>30</type>
 			<matcher>
