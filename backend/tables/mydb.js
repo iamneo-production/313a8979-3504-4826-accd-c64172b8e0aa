@@ -16,7 +16,7 @@ var con = mysql.createConnection({
 // });
 con.connect(function(err) {
     if (err) throw err;
-    var sql =  sql="create table userModel(email varchar(255),password varchar(255),username varchar(255),mobileNumber varchar(255),active boolean,role varchar(255) ,primary key(email))";
+    var   sql="create table userModel(email varchar(255),password varchar(255),username varchar(255),mobileNumber varchar(255),active boolean,role varchar(255) ,primary key(email))";
     con.query(sql, function (err, result) {
       if (err) throw err;
       console.log("table created");

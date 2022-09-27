@@ -17,7 +17,6 @@ router.post('/signup', signupValidation, (req, res, next) => {
     } 
     else {
     // username is available
-        console.log(req.body.password)
         bcrypt.hash(req.body.password, 10, (err, hash) => {
         if (err) {
             console.log(err)
@@ -29,7 +28,7 @@ router.post('/signup', signupValidation, (req, res, next) => {
     // has hashed pw => add to database
         db.query(
         `INSERT INTO userModel ( email, password,username,mobileNumber,active,role) VALUES ( ${db.escape(req.body.email)},
-                ${db.escape(hash)},'${req.body.userName}',${req.body.mobileNumber},${req.body.active},${req.body.role})`,(err, result) => {
+                ${db.escape(hash)},'${req.body.userName}',${req.body.mobileNumber},${req.body.active},'${req.body.role}')`,(err, result) => {
         if (err) {
                 return res.status(400).send({err});
         }
@@ -73,6 +72,7 @@ router.post('/login', loginValidation, (req, res, next) => {
             token,
             user: result[0]
         });
+        console.log(token)
      }
      return res.status(401).send({msg: 'Username or password is incorrect!'}); });
     }
