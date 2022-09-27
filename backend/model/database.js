@@ -1,18 +1,17 @@
 const mysql = require('mysql')
 
-var expenses = mysql.createConnection({
+var db = mysql.createConnection({
    port: 3306,
    host: "localhost",
    user: "root",
    password: "examly",
    database: "tarriff"
 })
-
-expenses.connect((err) => {
+db.connect((err) => {
    if (err)
-      console.log("heya")
+      console.log(err)
    else
       console.log(`started`)
 })
 
-module.exports = expenses
+module.exports = db
