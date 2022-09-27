@@ -10,7 +10,7 @@ import Home from './components/Home'
 function App() {
   return (
 
-    // <Home/>
+
     <Router>
       <div className="App">
         <nav className="navbar navbar-expand-lg navbar-light fixed-top">
@@ -40,6 +40,7 @@ function App() {
           </div>
         </nav>
 
+>>>>>>> 6156372bc2d3a328376229d47fdb2d186c62e4fb
         <div className="auth-wrapper">
           <div className="auth-inner">
             <Routes>

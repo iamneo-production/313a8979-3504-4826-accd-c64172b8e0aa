@@ -6,12 +6,13 @@ const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 router.post('/signup', signupValidation, (req, res, next) => {
+    console.log("called")
     db.query(`SELECT * FROM userModel WHERE LOWER(email) = LOWER(${db.escape(
     req.body.email
     )});`, 
         (err, result) => {
         if (result.length) {
-        return res.status(409).send({
+        return res.status(409).json({
                 msg: 'This user is already in use!'
         });
     } 
@@ -30,9 +31,9 @@ router.post('/signup', signupValidation, (req, res, next) => {
         `INSERT INTO userModel ( email, password,username,mobileNumber,active,role) VALUES ( ${db.escape(req.body.email)},
                 ${db.escape(hash)},'${req.body.userName}',${req.body.mobileNumber},${req.body.active},'${req.body.role}')`,(err, result) => {
         if (err) {
-                return res.status(400).send({err});
+                return res.status(400).json({err});
         }
-        return res.status(201).send({
+        return res.status(201).json({
             msg: 'The user has been registerd with us!'
         });
         }

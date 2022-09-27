@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { useState,useEffect} from 'react'
 
-export default class Login extends Component {
-  render() {
+export default function Login(){
+    
     return (
       <form id = "loginBox">
         <h3>Login</h3>
@@ -47,5 +47,5 @@ export default class Login extends Component {
         </p>
       </form>
     )
-  }
+  
 }
