@@ -51,15 +51,12 @@ const updateExpense = (req, res, next) =>{
       });  
 }
 const getExpenses = (req,res) =>{
-   console.log("Called")
    const {id} = req.params
-   console.log(id)
    const query = "select * from expenseModel where claimedBy = ?"
    expensesdb.query(query,[id],(err,results)=>{
       if(!err)
       {
-         console.log(results)
-         res.status(200).json(results);
+         res.status(200).json({results});
       }
       else{
          res.status(404);
@@ -67,4 +64,16 @@ const getExpenses = (req,res) =>{
 
    })
 }
-module.exports = {createExpense,updateExpense,deleteExpense,getExpenses};
+const getAll = async (req,res) =>{
+   const query = "select * from expenseModel"
+     expensesdb.query(query,async(err,results)=>{
+      if(!err)
+      {
+         res.send(results);
+      }
+      else{
+         res.status(404);
+      }
+   })
+}
+module.exports = {createExpense,updateExpense,deleteExpense,getExpenses,getAll};

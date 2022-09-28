@@ -6,12 +6,12 @@ import Card from 'react-bootstrap/Card';
 
 function Home() {
   const [total,setTotal]=useState()
-  const [data,setDate] = useState()
-  const getData = async() =>{
-    console.log(currentUser)
+  const [data,setData] = useState([])
+  const getData = async () =>{
     let a = 0;
-     await axios.get(`https://8080-aacdfdcbdbfbcffabfbadbfceaedbfcbceaface.examlyiopb.examly.io/expense/${currentUser.email}`).then((res)=>setData(res)).catch((err)=>{console.log("failed to fetch")})
-     data.map((e)=>{ a = Number(e.RawDataPacket.billCost)})
+    await axios.get(`https://8080-aacdfdcbdbfbcffabfbadbfceaedbfcbceaface.examlyiopb.examly.io/expense/${currentUser.email}`).then((res)=>{console.log(res.data.results)
+  }).catch((err)=>{console.log("failed to fetch")})
+     console.log(data)
      setTotal(a)
   }
   useEffect(() => {
@@ -21,7 +21,11 @@ function Home() {
   const [content, setContent] = useState("");
   const { user: currentUser } = useSelector((state) => state.auth);
   const [expense,setExpenses] = useState([])
-
+  if(!currentUser)
+  {
+    return (<>Please Login or Sign Up First</>)
+  }
+  else
   return (
 <>
     <center>

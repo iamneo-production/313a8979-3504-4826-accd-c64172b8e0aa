@@ -57,11 +57,11 @@ const App = () => {
               Home
             </Link>
           </li>
-          <li className="nav-item">
+ {        currentUser &&  (<li className="nav-item">
             <Link to={"/add-expenses"} className="nav-link">
               Add Expenses
             </Link>
-          </li>
+          </li>)}
 
           {showModeratorBoard && (
             <li className="nav-item">
