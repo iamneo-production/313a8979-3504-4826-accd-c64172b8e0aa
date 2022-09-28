@@ -40,7 +40,6 @@ function App() {
           </div>
         </nav>
 
->>>>>>> 6156372bc2d3a328376229d47fdb2d186c62e4fb
         <div className="auth-wrapper">
           <div className="auth-inner">
             <Routes>
