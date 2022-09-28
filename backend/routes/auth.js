@@ -6,6 +6,7 @@ const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 router.post('/signup', signupValidation, (req, res, next) => {
+    console.log("called signup")
     db.query(`SELECT * FROM userModel WHERE LOWER(email) = LOWER(${db.escape(
     req.body.email
     )});`, 
@@ -28,12 +29,13 @@ router.post('/signup', signupValidation, (req, res, next) => {
     // has hashed pw => add to database
         db.query(
         `INSERT INTO userModel ( email, password,username,mobileNumber,active,role) VALUES ( ${db.escape(req.body.email)},
-                ${db.escape(hash)},'${req.body.userName}',${req.body.mobileNumber},${req.body.active},'${req.body.role}')`,(err, result) => {
+                ${db.escape(hash)},'${req.body.userName}',${req.body.mobileNumber},${req.body.active},"${req.body.role}")`,(err, result) => {
         if (err) {
+                console.log(err);
                 return res.status(400).json({err});
         }
         return res.status(201).json({
-            msg: 'The user has been registerd with us!'
+            message: 'The user has been registerd with us!'
         });
         }
     );
@@ -53,6 +55,7 @@ router.post('/login', loginValidation, (req, res, next) => {
                 return res.status(400).send({msg: err});
         }
         if (!result.length) {
+            console.log("wrong password")
         return res.status(401).send({
         msg: 'Email or password is incorrect!'
     });
@@ -68,12 +71,13 @@ router.post('/login', loginValidation, (req, res, next) => {
     }
     if (bResult) {
         const token = jwt.sign({id:result[0].id},'the-super-strong-secrect',{ expiresIn: '1h' });
-        return res.status(200).send({
+        console.log(token)
+        return res.status(200).json({
             msg: 'Logged in!',
             token,
-            user: result[0]
+            email: result[0].email,
+            roles : result[0].role
         });
-        console.log(token)
      }
      return res.status(401).send({msg: 'Username or password is incorrect!'}); });
     }

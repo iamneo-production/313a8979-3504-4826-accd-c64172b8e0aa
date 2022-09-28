@@ -3,7 +3,7 @@ const expensesdb = require('../model/database')
 const createExpense = (req, res, next) => {
     let expense = req.body
     const query =
-      "insert into expenseModel (expenseId,billNumber,billImage,billCost,datedOn,status,remark,claimedId) values (?,?,?,?,?,?,?,?);"
+       "insert into expenseModel (expenseId,billNumber,billImage,billCost,datedOn,status,remark,claimedId) values (?,?,?,?,?,?,?,?);"
     expensesdb.query(query, [expense.expenseId,expense.billNumber,
       expense.billImage,expense.billCost,expense.datedOn,expense.status,
       expense.remark,expense.claimedId],
@@ -15,7 +15,6 @@ const createExpense = (req, res, next) => {
              return res.status(500).json({ message: err })
           }
        });
-
  }
  
  const deleteExpense = (req, res, next) => {
@@ -34,7 +33,6 @@ const createExpense = (req, res, next) => {
       });
    //format query , [data] , callback
 }
-
 const updateExpense = (req, res, next) =>{
    let expense = req.body
    const query =
@@ -50,5 +48,4 @@ const updateExpense = (req, res, next) =>{
          }
       });  
 }
-
 module.exports = {createExpense,updateExpense,deleteExpense};

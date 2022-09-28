@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors')
-const db = require('./model/database');
 const expensesRouter = require('./routes/expenses');
 const authRouter = require('./routes/auth')
 const app = express()

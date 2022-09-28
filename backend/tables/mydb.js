@@ -21,19 +21,17 @@ con.connect(function(err) {
       if (err) throw err;
       console.log("table created");
     });
-    sql = "create table expenseModel(expenseId varchar(256),billNumber int,billImage blob,billCost int,datedOn date,status varchar(256),remark varchar(256),claimedBy varchar(256),Primary key (expenseId),foreign key(claimedBy) references userModel(email))";
+    sql = "create table expenseModel(expenseId varchar(256),billNumber int,billImage blob,datedOn date,status varchar(256),remark varchar(256),claimedBy varchar(256),Primary key (expenseId))";
     con.query(sql, function (err, result) {
         if (err) throw err;
         console.log("table created");
       });
-  });
-  con.connect(function(err) {
-    if (err) throw err;
-    var sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'";
+    var sql="create table expenses(email varchar(255),total int,approved int,pending int,primary key(email))";
     con.query(sql, function (err, result) {
       if (err) throw err;
-      console.log(result.affectedRows + " record(s) updated");
+      console.log("table created");
     });
+
   });
 
 
