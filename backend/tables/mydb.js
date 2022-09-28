@@ -4,7 +4,7 @@ console.log(mysql)
 var con = mysql.createConnection({
   port: 3306,
   host:"localhost",
-  user: "coder",
+  user: "root",
   password: "examly",
   database:"tarriff"
 });
@@ -16,12 +16,12 @@ var con = mysql.createConnection({
 // });
 con.connect(function(err) {
     if (err) throw err;
-    var sql = "create table expenseModel(expenseId varchar(256),billNumber int,billImage varbinary(max),billCost int,datedOn date,status varchar(256),remark varchar(256),claimedBy varchar(256),Primary key (expenseId),foreign key(claimedBy) references userModel(email))";
+    var   sql="create table userModel(email varchar(255),password varchar(255),username varchar(255),mobileNumber varchar(255),active boolean,role varchar(255) ,primary key(email))";
     con.query(sql, function (err, result) {
       if (err) throw err;
       console.log("table created");
     });
-    sql="create table userModel(email varchar(255),passwrod varchar(255),username varchar(255),mobileNumber varchar(255),active boolean,role varchar(255))";
+    sql = "create table expenseModel(expenseId varchar(256),billNumber int,billImage blob,billCost int,datedOn date,status varchar(256),remark varchar(256),claimedBy varchar(256),Primary key (expenseId),foreign key(claimedBy) references userModel(email))";
     con.query(sql, function (err, result) {
         if (err) throw err;
         console.log("table created");

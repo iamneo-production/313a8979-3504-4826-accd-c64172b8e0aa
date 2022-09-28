@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from "@restart/ui/esm/Button";
 
-
+import im from "./usericon.png"
 
 
 function User() {
@@ -17,7 +17,7 @@ function User() {
                     <Col style={{ backgroundColor: "blue" }}>
 
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="holder.js/100px180" />
+                            <Card.Img variant="top" src="holder.js/100px180"/>
                             <Card.Body>
                                 <Card.Title>Card Title</Card.Title>
                                 <Card.Text>
@@ -31,58 +31,64 @@ function User() {
                     </Col>
                     <Col className="d-flex justify-content-center" >
 
-
+                    
                         <div >
-                            <div >
+                            <div className = "d-flex justify-content-center" >
                                 <h3>Add Expense</h3>
                             </div>
-                            <div>
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            </div>
+                            <div className="rounded">
+                                <img src={im} />
+                            
+                                                 </div>
 
                             <div className="mb-3" id="email">
-                                <label>Email</label>
+                            <label>Select Date</label>
+
                                 <input
-                                    type="email"
+                                    type="date"
                                     className="form-control"
-                                    placeholder="Enter Email"
+                                    placeholder="Select Date"
                                 />
                             </div>
 
                             <div className="mb-3" id="username">
-                                <label>Username</label>
-                                <input type="string" className="form-control" placeholder="Enter Username" />
+                            <label>Employee ID</label>
+
+                                <input type="string" className="form-control" placeholder="Emp ID" />
                             </div>
 
                             <div className="mb-3" id="mobileNumber">
-                                <label>MobileNumber</label>
+                            <label>Upload Recipt</label>
+
                                 <input
-                                    type="number"
+                                    type="file"
                                     className="form-control"
-                                    placeholder="Enter MobileNumber"
+                                    placeholder="Upload Reciep"
                                 />
                             </div>
 
                             <div className="mb-3" id="password">
-                                <label>Password</label>
+                            <label>Amount</label>
+
                                 <input
-                                    type="password"
+                                    type="number"
                                     className="form-control"
-                                    placeholder="Enter Password"
+                                    placeholder="Enter Amount"
                                 />
                             </div>
 
                             <div className="mb-3" id="confirmPassword">
-                                <label>Confirm Password</label>
+                            <label>Description</label>
+
                                 <input
-                                    type="password"
+                                    type="string"
                                     className="form-control"
-                                    placeholder="Enter password"
+                                    placeholder="Enter Description"
                                 />
                             </div>
 
                             <div className="d-grid">
-                                <button type="submit" className="btn btn-primary" id="submitButton">
+                                <button type="submit" className="btn sm btn-primary" id="submitButton">
                                     Submit
                                 </button>
                             </div>

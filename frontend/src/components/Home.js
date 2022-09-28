@@ -1,8 +1,33 @@
+<<<<<<< HEAD
 // import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+=======
+import React, { useState, useEffect } from "react";
 
-function Home() {
+import UserService from "../services/user.service";
+
+const Home = () => {
+  const [content, setContent] = useState("");
+
+  useEffect(() => {
+    UserService.getPublicContent().then(
+      (response) => {
+        setContent(response.data);
+      },
+      (error) => {
+        const _content =
+          (error.response && error.response.data) ||
+          error.message ||
+          error.toString();
+
+        setContent(_content);
+      }
+    );
+  }, []);
+>>>>>>> 74e1b79506b117498d91ec21187c6e3482673532
+
   return (
+<<<<<<< HEAD
 <>
     <center>
     <div className="mt-4 d-flex justify-content-center">
@@ -73,7 +98,14 @@ function Home() {
 </div>
 </center>
 </>
+=======
+    <div className="container">
+      <header className="jumbotron">
+        <h3>{content}</h3>
+      </header>
+    </div>
+>>>>>>> 74e1b79506b117498d91ec21187c6e3482673532
   );
-}
+};
 
 export default Home;
