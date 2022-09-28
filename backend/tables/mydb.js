@@ -26,7 +26,7 @@ con.connect(function(err) {
         if (err) throw err;
         console.log("table created");
       });
-    var sql="create table expenses(email varchar(255),total int,approved int,pending int,primary key(email))";
+    sql="create table expenses(email varchar(255),total int,approved int,pending int,primary key(email))";
     con.query(sql, function (err, result) {
       if (err) throw err;
       console.log("table created");
