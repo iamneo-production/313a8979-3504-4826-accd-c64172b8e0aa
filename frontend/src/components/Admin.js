@@ -16,66 +16,91 @@ function Admin() {
             <Container className="mt-5">
                 <div className="row">
                     <div className="column" style={{ float: 'left', width: '70%' }}>
-                        hi
+                        <table class="table table-borderless mt-5">
+                            <thead>
+                                <tr>
+                                    <th scope="col">S No</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+
                     </div>
                     <div className="column" style={{ float: 'right', width: '30%' }}>
 
-                        
+
 
 
                         <div >
-                        <div className = "d-flex justify-content-center mt-3" >
-                        <h3>ADD/Edit Details</h3>
-                        </div>
-                        <div className = "d-flex justify-content-center mt-3" >
-                        </div>
+                            <div className="d-flex justify-content-center mt-3" >
+                                <h3>ADD/Edit Details</h3>
+                            </div>
+                            <div className="d-flex justify-content-center mt-3" >
+                            </div>
 
-                        <div className="mb-3" id="enterName">
+                            <div className="mb-3" id="enterName">
 
-                        <input
-                        type ="string"
-                        className="form-control"
-                        placeholder="Enter Name"
-                        />
-                        </div>
+                                <input
+                                    type="string"
+                                    className="form-control"
+                                    placeholder="Enter Name"
+                                />
+                            </div>
 
-                        <div className="mb-3" id="enterEmail">
+                            <div className="mb-3" id="enterEmail">
 
-                        <input type ="email" className="form-control" placeholder="Enter email" />
-                        </div>
+                                <input type="email" className="form-control" placeholder="Enter email" />
+                            </div>
 
-                        <div className="mb-3" id="emailPassword">
+                            <div className="mb-3" id="emailPassword">
 
-                        <input
-                        type ="password"
-                        className="form-control"
-                        placeholder="Enter Password"
-                        />
-                        </div>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    placeholder="Enter Password"
+                                />
+                            </div>
 
-                        <div className="mb-3" id="enterExperience">
+                            <div className="mb-3" id="enterExperience">
 
-                        <input
-                        type ="number"
-                        className="form-control"
-                        placeholder="Enter Experience"
-                        />
-                        </div>
+                                <input
+                                    type="number"
+                                    className="form-control"
+                                    placeholder="Enter Experience"
+                                />
+                            </div>
 
-                        <div className="mb-3" id="enterSpecialist">
+                            <div className="mb-3" id="enterSpecialist">
 
-                        <input
-                        type ="string"
-                        className="form-control"
-                        placeholder="Enter Specialist"
-                        />
-                        </div>
+                                <input
+                                    type="string"
+                                    className="form-control"
+                                    placeholder="Enter Specialist"
+                                />
+                            </div>
 
-                        <div className="d-grid">
-                        <button type ="submit" className="btn sm btn-primary" id="submitButton">
-                        Update
-                        </button>
-                        </div>
+                            <div className="d-grid">
+                                <button type="submit" className="btn sm btn-primary" id="submitButton">
+                                    Update
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
