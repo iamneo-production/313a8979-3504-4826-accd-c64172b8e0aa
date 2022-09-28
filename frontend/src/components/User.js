@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from "@restart/ui/esm/Button";
 
-import im from "./usericon.png"
+import im from "./usericon2.png"
 
 
 function User() {
@@ -33,13 +33,12 @@ function User() {
 
                     
                         <div >
-                            <div className = "d-flex justify-content-center" >
+                            <div className = "d-flex justify-content-center mt-3" >
                                 <h3>Add Expense</h3>
                             </div>
-                            <div className="rounded">
-                                <img src={im} />
-                            
-                                                 </div>
+                            <div className = "d-flex justify-content-center mt-3" >
+                                <img src={im} style={{width: "100px" , height :"100px"}} className="center"/>
+                             </div>
 
                             <div className="mb-3" id="email">
                             <label>Select Date</label>
