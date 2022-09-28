@@ -81,7 +81,7 @@ const Register = () => {
     setMobile(mobile)
   }
   
-  const onChangeRole = (e) =>{
+  const handleChange = (e) =>{
     const rol = e.target.value;
     setRole(rol)
   }
@@ -154,13 +154,12 @@ const Register = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="role">Role</label>
-                <Input
-                  type="role"
-                  className="form-control"
-                  name="role"
-                  value={role}
-                  onChange={onChangeRole}
-                />
+                <select value = {role} onChange={handleChange}>
+                  <option value = "ROLE_USER">ROLE USER</option>
+                  <option value= "ROLE_MODERATOR">ROLE MODERATOR</option>
+                  <option value = "ROLE_ADMIN">ROLE ADMIN</option>
+                </select>
+
               </div>
               <div className="form-group">
                 <label htmlFor="mobile">Mobile</label>
@@ -172,7 +171,7 @@ const Register = () => {
                   onChange={onChangeMobile}
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group" style={{marginTop:8}}>
                 <button className="btn btn-primary btn-block">Sign Up</button>
               </div>
             </div>

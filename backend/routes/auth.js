@@ -6,11 +6,11 @@ const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 router.post('/signup', signupValidation, (req, res, next) => {
-    console.log("called signup")
     db.query(`SELECT * FROM userModel WHERE LOWER(email) = LOWER(${db.escape(
     req.body.email
     )});`, 
         (err, result) => {
+            console.log(err)
         if (result.length) {
         return res.status(409).json({
                 msg: 'This user is already in use!'
@@ -29,8 +29,9 @@ router.post('/signup', signupValidation, (req, res, next) => {
     // has hashed pw => add to database
         db.query(
         `INSERT INTO userModel ( email, password,username,mobileNumber,active,role) VALUES ( ${db.escape(req.body.email)},
-                ${db.escape(hash)},'${req.body.userName}',${req.body.mobileNumber},${req.body.active},"${req.body.role}")`,(err, result) => {
+                ${db.escape(hash)},'${req.body.userName}',${req.body.mobileNumber},${req.body.active},'${req.body.role}')`,(err, result) => {
         if (err) {
+            console.log(err)
                 console.log(err);
                 return res.status(400).json({err});
         }
@@ -73,10 +74,11 @@ router.post('/login', loginValidation, (req, res, next) => {
         const token = jwt.sign({id:result[0].id},'the-super-strong-secrect',{ expiresIn: '1h' });
         console.log(token)
         return res.status(200).json({
-            msg: 'Logged in!',
-            token,
-            email: result[0].email,
-            roles : result[0].role
+            "id" :1,
+            "accessToken":token,
+            "email": result[0].email,
+            "roles" : [result[0].role],
+            "username": result[0].userName
         });
      }
      return res.status(401).send({msg: 'Username or password is incorrect!'}); });

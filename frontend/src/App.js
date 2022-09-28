@@ -12,7 +12,7 @@ import Profile from "./components/Profile";
 import BoardUser from "./components/BoardUser";
 import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";
-
+import AddExpenses from './components/AddExpenses'
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 
@@ -55,6 +55,11 @@ const App = () => {
           <li className="nav-item">
             <Link to={"/home"} className="nav-link">
               Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to={"/add-expenses"} className="nav-link">
+              Add Expenses
             </Link>
           </li>
 
@@ -123,6 +128,7 @@ const App = () => {
           <Route path="/user" element={<BoardUser />} />
           <Route path="/mod" element={<BoardModerator />} />
           <Route path="/admin" element={<BoardAdmin />} />
+          <Route path="/add-expenses" element = {<AddExpenses/>} />
         </Routes>
       </div>
 
