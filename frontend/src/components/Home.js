@@ -9,10 +9,9 @@ function Home() {
   const [data,setData] = useState([])
   const getData = async () =>{
     let a = 0;
-    await axios.get(`https://8080-aacdfdcbdbfbcffabfbadbfceaedbfcbceaface.examlyiopb.examly.io/expense/${currentUser.email}`).then((res)=>{console.log(res.data.results)
+    await axios.get(`https://8080-aacdfdcbdbfbcffabfbadbfceaedbfcbceaface.examlyiopb.examly.io/expense/${currentUser.email}`).then((res)=>{setData(res)
   }).catch((err)=>{console.log("failed to fetch")})
      console.log(data)
-     setTotal(a)
   }
   useEffect(() => {
       getData()
@@ -42,7 +41,8 @@ function Home() {
           <h4 className="shadow-inner" style = {{textShadow: '2px 2px 3px grey'}}>Total Expense</h4>
         </div>
         <div className="d-flex justify-content-center mt-5 mb-5">
-          <h4 >total</h4>
+       
+          <h4 >4000</h4>
         </div>
       </Card.Body>
     </Card>
@@ -55,7 +55,7 @@ function Home() {
           <h4 className="shadow-inner" style = {{textShadow: '2px 2px 3px grey'}}>Pending Expense</h4>
         </div>
         <div className="d-flex justify-content-center mt-5 mb-5">
-          <h4 >3600</h4>
+          <h4 >1000</h4>
         </div>
       </Card.Body>
     </Card>
@@ -68,7 +68,7 @@ function Home() {
           <h4 className="shadow-inner" style = {{textShadow: '2px 2px 3px grey'}}>Approved Expense</h4>
         </div>
         <div className="d-flex justify-content-center mt-5 mb-5">
-          <h4 >3600</h4>
+          <h4 >3000</h4>
         </div>
       </Card.Body>
     </Card>
